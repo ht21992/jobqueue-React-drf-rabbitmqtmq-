@@ -1,0 +1,45 @@
+# Run Celery on Windows
+
+# you might need gevent on Windows
+celery -A jobqueue worker -l info -P gevent
+
+# this is solo mode
+celery -A jobqueue worker --loglevel=info --pool=solo
+
+
+
+
+# setup rabbitmq on ubuntu
+sudo apt install rabbitmq-server
+
+sudo systemctl enable rabbitmq-server
+# With Service will be : sudo service rabbitmq-server enable
+
+sudo systemctl start rabbitmq-server
+
+sudo systemctl status rabbitmq-server
+
+
+
+# You might need it
+
+sudo apt install net-tools
+netstat -plnt | grep 5672
+
+# You might need it
+
+Open the RabbitMQ configuration file (if it exists) or create one:
+
+sudo nano /etc/rabbitmq/rabbitmq.conf
+
+Add the following lines to ensure it listens on both IPv4 and IPv6 interfaces:
+
+listeners.tcp.default = 0.0.0.0:5672
+
+Save the file, restart RabbitMQ, and check again if it listens on port 5672:
+
+sudo service rabbitmq-server restart
+
+Step 3: Update the Django CELERY_BROKER_URL
+
+CELERY_BROKER_URL = "amqp://guest:guest@localhost:5672//"

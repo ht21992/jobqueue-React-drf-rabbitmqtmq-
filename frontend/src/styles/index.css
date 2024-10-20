@@ -1,0 +1,60 @@
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css");
+
+body {
+  background-color: #f8f9fa;
+  font-family: "Roboto", sans-serif;
+}
+
+
+.card {
+  border-radius: 15px;
+  background: linear-gradient(145deg, #e0e0e0, #ffffff);
+}
+
+
+.table {
+  /* border-radius: 12px; */
+  overflow: hidden;
+
+}
+
+
+.job-row {
+  transition: transform 0.2s ease-in-out;
+}
+
+.job-row:hover {
+  transform: scale(1.02);
+  background-color: #f1f3f5;
+  border-left: solid 6px #454d55;
+}
+
+
+.custom-file-input:focus + .custom-file-label {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+
+.progress {
+  height: 25px;
+}
+
+.progress-bar {
+  transition: width 0.5s ease-in-out;
+}
+
+
+.btn {
+  border-radius: 50px;
+  transition: background-color 0.3s;
+  margin-bottom: 9px;
+}
+
+
+
+
+.form-select{
+  height: 36px;
+  margin-bottom: 9px;
+}
